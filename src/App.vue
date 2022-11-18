@@ -1,31 +1,40 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script >
+
+import { ref } from 'vue';
+
+import QModalVue from './components/theme/molecules/QModal.vue';
+
+export default {
+  components: { QModalVue },
+  setup () {
+    const contador = ref(0);
+    const showModal = ref(false);
+
+    const sumar = () => contador.value++;
+    const restar = () => contador.value--;
+
+    return {
+      sumar,
+      showModal,
+      restar,
+      contador
+    }
+  }
+}
+
+
 </script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <main data-theme="default">
+    <button @click="restar" class="bg-primary px-8 py-1 text-white">Restar</button>
+    <button @click="sumar" class="bg-secondary px-8 py-1 text-white">Sumar</button>
+    Contador: {{ contador }}
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+
+    <div>
+      <q-modal-vue />
+    </div>
+
+
+  </main>
+</template>

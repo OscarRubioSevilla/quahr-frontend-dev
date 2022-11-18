@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {    
+    --primary: #161442;
+    --primary-500: #121136;
+    --secondary: #52C7E4;
+    --color-negro: #000000;
+    --color-blanco: #FFFFFF;
+    --rojo: #C13139;
+    --verde: #46B75C;
+}
+
+@layer base {
+    [data-theme="default"] {
+        --primary: #a5a736;
+        --primary-500: #81822c;
+        --secondary: #e7ccf3;
+    }
+
+    [data-theme="neon"] {
+        --primary: #ac7d4e;
+        --primary-500: #6b7500;
+        --secondary: #1e8c34;
+    }
+}
