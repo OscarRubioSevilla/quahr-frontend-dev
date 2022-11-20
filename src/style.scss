@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    font-family: 'Exo', sans-serif;
+}
+
 
 :root {    
     --primary: #161442;
@@ -26,3 +30,13 @@
         --secondary: #1e8c34;
     }
 }
+
+
+.bloque-quahr {
+    background: rgb(22,20,66);
+    background: -moz-linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
+    background: -webkit-linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
+    background: linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#161442",endColorstr="#161442",GradientType=1);
+}
+

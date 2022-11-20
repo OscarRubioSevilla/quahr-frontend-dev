@@ -10,4 +10,3 @@ const app = createApp(App)
 app.use(vfmPlugin);
 
 app.mount('#app');
-console.log(app)

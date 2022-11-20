@@ -1,40 +1,18 @@
 <script >
 
-import { ref } from 'vue';
-
-import QModalVue from './components/theme/molecules/QModal.vue';
+import MainHeader from './components/layout/header/MainHeader.vue';
 
 export default {
-  components: { QModalVue },
-  setup () {
-    const contador = ref(0);
-    const showModal = ref(false);
+  components: { MainHeader },
+  setup() {
 
-    const sumar = () => contador.value++;
-    const restar = () => contador.value--;
+    const titulo = 'QUAHR V2';
+    const botones = ['Iniciar sesión', 'Registrarse'];
 
-    return {
-      sumar,
-      showModal,
-      restar,
-      contador
-    }
+    return { titulo, botones }
   }
 }
-
-
 </script>
 <template>
-  <main data-theme="default">
-    <button @click="restar" class="bg-primary px-8 py-1 text-white">Restar</button>
-    <button @click="sumar" class="bg-secondary px-8 py-1 text-white">Sumar</button>
-    Contador: {{ contador }}
-
-
-    <div>
-      <q-modal-vue />
-    </div>
-
-
-  </main>
+  <main-header :titulo="titulo" :botones="botones"></main-header>
 </template>
