@@ -13,6 +13,7 @@ module.exports = {
         'secondary': 'var(--secondary)',
         'blue': 'var(--blue)',
         'nero': 'var(--nero)',
+        'dolphin': 'var(--dolphin)',
         'purple': 'var(--purple)',
         'orange': 'var(--orange)',
         'green': 'var(--green)',

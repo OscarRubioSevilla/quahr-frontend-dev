@@ -11,6 +11,7 @@ html, body {
     --primary: #161442;
     --primary-500: #121136;
     --secondary: #52C7E4;
+    --dolphin: #696974;
     --color-negro: #000000;
     --color-blanco: #FFFFFF;
     --rojo: #C13139;
@@ -40,3 +41,14 @@ html, body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#161442",endColorstr="#161442",GradientType=1);
 }
 
+.flex-2 {
+    flex: 2 2 0%;
+}
+
+.flex-3 {
+    flex: 3 3 0%;
+}
+
+.flex-4 {
+    flex: 4 4 0%;
+}

@@ -7,7 +7,7 @@ export default {
   setup() {
 
     const titulo = 'QUAHR V2';
-    const botones = ['Iniciar sesión', 'Registrarse'];
+    const botones = ['Probar gratis','Iniciar sesión'];
 
     return { titulo, botones }
   }
