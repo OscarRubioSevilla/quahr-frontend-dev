@@ -1,13 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html, body {
+html,
+body {
     font-family: 'Exo', sans-serif;
 }
 
-
-:root {    
+:root {
     --primary: #161442;
     --primary-500: #121136;
     --secondary: #52C7E4;
@@ -24,7 +23,6 @@ html, body {
         --primary-500: #81822c;
         --secondary: #e7ccf3;
     }
-
     [data-theme="neon"] {
         --primary: #ac7d4e;
         --primary-500: #6b7500;
@@ -32,13 +30,12 @@ html, body {
     }
 }
 
-
 .bloque-quahr {
-    background: rgb(22,20,66);
-    background: -moz-linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
-    background: -webkit-linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
-    background: linear-gradient(180deg, rgba(22,20,66,1) 2%, rgba(82,199,228,1) 24%, rgba(146,246,255,1) 47%, rgb(206 251 255) 51%, rgba(146,246,255,1) 65%, rgba(82,199,228,1) 78%, rgba(22,20,66,1) 98%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#161442",endColorstr="#161442",GradientType=1);
+    background: rgb(22, 20, 66);
+    background: -moz-linear-gradient(180deg, rgba(22, 20, 66, 1) 2%, rgba(82, 199, 228, 1) 24%, rgba(146, 246, 255, 1) 47%, rgb(206 251 255) 51%, rgba(146, 246, 255, 1) 65%, rgba(82, 199, 228, 1) 78%, rgba(22, 20, 66, 1) 98%);
+    background: -webkit-linear-gradient(180deg, rgba(22, 20, 66, 1) 2%, rgba(82, 199, 228, 1) 24%, rgba(146, 246, 255, 1) 47%, rgb(206 251 255) 51%, rgba(146, 246, 255, 1) 65%, rgba(82, 199, 228, 1) 78%, rgba(22, 20, 66, 1) 98%);
+    background: linear-gradient(180deg, rgba(22, 20, 66, 1) 2%, rgba(82, 199, 228, 1) 24%, rgba(146, 246, 255, 1) 47%, rgb(206 251 255) 51%, rgba(146, 246, 255, 1) 65%, rgba(82, 199, 228, 1) 78%, rgba(22, 20, 66, 1) 98%);
+    filter: "progid:  DXImageTransform.Microsoft.gradient(startColorstr="#161442", endColorstr="#161442", GradientType=1)";
 }
 
 .flex-2 {
@@ -51,4 +48,26 @@ html, body {
 
 .flex-4 {
     flex: 4 4 0%;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 80px;
+    min-width: 70px;
+    height: auto;
+}
+
+.select-width {
+    width: 7em;
+    height: 2em;
+}
+
+.mensuales {
+    position: relative;
+    bottom: .5em;
+    color: #B9B9B9;
+}
+
+.btn-probar {
+    background: rgb(82 199 228)
 }
