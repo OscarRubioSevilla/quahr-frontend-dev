@@ -16,11 +16,17 @@ export default {
         
          
 
+    },data(){
+        return{
+           
+        }
     },
     methods:{
+       
         
+
         show :(e)=> {
-         
+            const a = `ads ${k}`;
             const ruta = 'http://127.0.0.1:5173/src/assets/landing/caracteristicas/';
          let id = e.target.id;
      
@@ -65,6 +71,7 @@ export default {
         }
     },
 setup(){
+  
     const texto ='Optimiza tu tiempo con tu agenda en la nube, siempre sincronizada de tu mano, a tu escritorio con cualquier dispositivo'
 
       
@@ -206,19 +213,19 @@ setup(){
                     <span class="text-[#616161]">Precios transparentes para clientes que valoramos</span>
                     <span class="text-[#616161]">¡Elige el plan que se adapte mejor a tu negocio!</span>
                 </div>
-                <div class="flex  gap-12 p-10">
-                    <div class="flex flex-1 bg-white p-2  justify-center rounded-lg">
+                <div class="flex justify-around gap-12 p-10">
+                    <div class="flex paquetes-div  justify-center rounded-lg px-4">
                         <div class="">
                            <div class="border-b-2 py-2" >
-                                 <h1 class="text-3xl font-semibold text-center" >Profesional</h1>
+                                 <h1 class="text-3xl font-semibold text-center">Profesional</h1>
                            </div>
-                            <div class=" flex flex-col gap-5 text-lg">
-                                <div>* Hasta 100 pacientes</div>
-                                <div>Incluye 7 imprimibles para tu control</div>
-                                <div>Historia clinica de tus pacientes</div>
-                                <div>Recordatorios a pacientes</div>
+                            <div class=" flex flex-col gap-5 text-base my-4 text-center text-[#161442]">
+                                <div class="">* Hasta 100 pacientes</div>
+                                <div  class="">Incluye 7 imprimibles para tu control</div>
+                                <div  class="">Historia clinica de tus pacientes</div>
+                                <div  class="">Recordatorios a pacientes</div>
                             </div>
-                            <div class="flex justify-center gap-10 m-5" >
+                            <div class="flex justify-center gap-10 my-8" >
                                 <select  class="bg-[#EFEFEF] rounded-md select-width "  name="" id="">
                                     <option value="">Anual</option>
                                     <option value="">3 años</option>
@@ -237,35 +244,97 @@ setup(){
                                 <span class="font-semibold text-[#B9B9B9] text-xs">(pago contado $2,988.00)</span>
                             </div>
                             <div class="flex justify-center m-5">
-                                <button class="btn-probar select-width rounded-lg">Probar</button>
+                                <button class="btn-probar py-2 px-6 text-lg font-semibold rounded-lg">Probar gratis</button>
                             </div>
-
                         </div>
 
                         
                     </div>
-                    <div class="flex flex-1 bg-white p-2 justify-center rounded-lg ">
-                        <div>
+                    <div class="flex  flex-col paquetes-div  rounded-lg text-center">
+                        <div class="border-b-2 py-2">
                             <h1 class="text-3xl font-semibold">Avanzado</h1>
-                        <div>
-                            <div><span>* Hasta 300 pacientes</span></div>
-                            <div><span></span></div>
                         </div>
+                        <div class="flex flex-col gap-5 text-base my-4 text-center text-[#161442]">
+                            <div  >Hasta 300 pacientes</div>
+                            <div>Incluye ortodoncia</div>
+                            <div>Incluye Imprimibles para hoja membretada</div>
+                            <div>Hasta 300MB de almacenamiento</div>
+                         </div>
+                         <div class="flex justify-center gap-10 m-5" >
+                            <select  class="bg-[#EFEFEF] rounded-md select-width "  name="" id="">
+                                <option value="">Anual</option>
+                                <option value="">3 años</option>
+                                <option value="">5 años</option>
+                            </select>
                         </div>
-                        
-                    </div>
-                    <div class="flex flex-1 bg-white p-2 justify-center rounded-lg ">
-                        <div>
-                            <h1 class="text-3xl font-semibold">Especialista</h1>
-                        <div>
-                            <div>* Sin limite de pacientes</div>
+                        <div class="flex flex-col text-center">
+                            <span class="text-[#1D72B3] text-3xl font-extrabold">$249 MXN</span>
+                            <span class="mensuales font-semibold">mensuales</span>
+                          </div>  
+                          <div class="flex flex-col text-center m-4">
+                            <span class="text-black text-xl font-extrabold">Ahorro de 29.00%</span>
+                        </div> 
+                        <div class="flex flex-col  text-center">
+                            <span class="font-semibold text-[#B9B9B9]">*Contratando anual</span>
+                            <span class="font-semibold text-[#B9B9B9] text-xs">(pago contado $2,988.00)</span>
                         </div>
+                        <div class="flex justify-center m-5">
+                            <button class="btn-probar py-2 px-6 text-lg font-semibold rounded-lg">Probar gratis</button>
                         </div>
-                        
-                    </div>
 
+                    </div>
+                    
+                    <div class="flex  flex-col paquetes-div  rounded-lg text-center px-4">
+                        <div class="border-b-2 py-2">
+                            <h1 class="text-3xl font-semibold">Especialista
+                            </h1>
+                        </div>
+                        <div class="flex flex-col gap-5 text-base my-4 text-center text-[#161442]">
+                            <div>Sin límite de pacientes</div>
+                            <div>Incluye ortodoncia y peridontograma</div>
+                            <div>Incluye Imprimibles para hoja membretada</div>
+                            <div>Hasta 700MB de almacenamiento</div>
+                         </div>
 
+                         <div class="flex justify-center gap-10 m-5" >
+                            <select  class="bg-[#EFEFEF] rounded-md select-width "  name="" id="">
+                                <option value="">Anual</option>
+                                <option value="">3 años</option>
+                                <option value="">5 años</option>
+                            </select>
+                        </div>
+
+                         <div class="flex flex-col text-center">
+                            <span class="text-[#1D72B3] text-3xl font-extrabold">$249 MXN</span>
+                            <span class="mensuales font-semibold">mensuales</span>
+                          </div>  
+                          <div class="flex flex-col text-center m-4">
+                            <span class="text-black text-xl font-extrabold">Ahorro de 29.00%</span>
+                        </div> 
+                        <div class="flex flex-col  text-center">
+                            <span class="font-semibold text-[#B9B9B9]">*Contratando anual</span>
+                            <span class="font-semibold text-[#B9B9B9] text-xs">(pago contado $2,988.00)</span>
+                        </div>
+                        <div class="flex justify-center m-5">
+                            <button class="btn-probar py-2 px-6 text-lg font-semibold rounded-lg">Probar gratis</button>
+                        </div>
+                 </div>
+           </div>
+
+            <div class="flex flex-col justify-center items-center gap-4 py-4">
+                <h3 class="text-black text-3xl font-semibold ">Preguntas frecuentes</h3>
+                <hr class="w-16 h-1 border-0 bg-black">
+            </div>
+            <div class="flex flex-col gap-8 text-[#182051] font-semibold text-xl "  >
+                <div class="bg-white rounded-full p-2 py-4" >
+                    <span>¿Qué es Quahr dental?</span>
                 </div>
+                <div  class="bg-white" >
+                    <span >¿Dónde se guarda mi información?</span>
+                </div>
+                <div>Quahr Dental es un sistema de administración y control clÍnico para odontólogos y clÍnicas odontológicas, para tener tu agenda a la mano cuando y donde la necesites.</div>
+            </div>
+
 
 
                
