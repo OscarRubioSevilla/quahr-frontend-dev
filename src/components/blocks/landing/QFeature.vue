@@ -35,6 +35,7 @@ export default {
 </script>
 
 <template>
+    
     <div @click="selectedFeature">
         <img :src="getImageUrl(`landing/img/${currentFeature.image}`)" alt=""
             :class="current_feature.id === feature.id ? 'bg-primary' : 'bg-white' "

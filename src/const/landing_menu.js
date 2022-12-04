@@ -1,5 +1,4 @@
-export const FEATURES_MENU = [
-    {
+export const FEATURES_MENU = [{
         id: 'agenda',
         name: 'Agenda',
         image: 'agenda-deg.png',
@@ -40,5 +39,15 @@ export const FEATURES_MENU = [
         image: 'comunidad-deg.png',
         description: 'Reunimos a profesionales de todo el mundo para compartir conocimiento, opiniones, reseñas de productos, aquí hay espacio para todos',
         description_image: 'caracteristicas_comunidad.png'
+    }
+]
+
+
+export const QUESTIONS = [
+
+    {
+        id: 1,
+        title: 'QUe es quar',
+        description: 'Vuar es ...'
     }
 ]
