@@ -3,6 +3,14 @@ import {ref} from 'vue';
 
 export default{
 
+    props:{
+        question:{
+            type: Object,
+            required: true
+        }
+    },
+
+
         setup(){
 
             const showQuestion = ref(false)
@@ -19,18 +27,20 @@ export default{
 
 </script>
 <template>
-    <div class="flex flex-col gap-8  ">
-        <div :class=" !showQuestion ?'rounded-full' : 'rounded-lg'  "  class="bg-white  ">
-            <div  @click="openAnswer" class="p-5 transition-v font-semibold text-xl text-primary  ">Qué es Quahr dental?</div>
+   
+        <div  :class=" !showQuestion ?'rounded-full' : 'rounded-lg'  "  class="bg-white  w-full ">
+            <div  @click="openAnswer" class="p-5 transition-v font-semibold text-xl text-primary flex justify-between ">
+                 {{question.title}} 
+                <img  class="w-8" src="@/assets/landing/questions/btn-question.png"  alt=""> 
+            </div>
             <div v-if="showQuestion" class="border-t-2 border-silver">
                 <p class="m0 p-5 ">
-                    Quahr Dental es un sistema de administración y control clÍnico para odontólogos y
-                clÍnicas odontológicas, para tener tu agenda a la mano cuando y donde la necesites.
+                   {{question.description}} 
                 </p>
             </div>
         </div>
-    </div>
-    <br><br><br>
+
+    <br>
 </template>
 <style>
 .transition-v {

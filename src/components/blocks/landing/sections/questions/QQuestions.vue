@@ -1,29 +1,27 @@
 <script>
 import QQuestion from './QQuestion.vue';
+import QTitle from '../../QTitle.vue';
+import { QUESTIONS } from '@/const/landing';
 
 export default{
 
+    components:{ QQuestion, QTitle },
 
-    components:{ QQuestion }
+
+    setup(){
 
 
+        return{QUESTIONS}
+        
+    }
 
 }
 
-</script>
-
+</script>   
 <template>
-
-    <div class="flex flex-col justify-center items-center gap-4 py-4">
-        <h3 class="text-black text-3xl font-semibold ">Preguntas frecuentes</h3>
-        <hr class="w-16 h-1 border-0 bg-black">
-    </div>
-   <q-question/>
-   <q-question/>
-   <q-question/>
-   <q-question/>
-   <q-question/>
-   
-
-
+    <section id="questions">
+        <q-title name="Preguntas frecuentes" color="white" />
+        <q-question  v-for="question of QUESTIONS" :question="question" />
+    </section>
+    
 </template>

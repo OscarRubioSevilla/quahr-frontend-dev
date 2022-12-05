@@ -1,6 +1,8 @@
 <script>
 import QPackage from '@/components/blocks/landing/sections/packages/QPackage.vue';
-import { PACKAGES } from '@/const/packages';
+
+import QTitle from '../../QTitle.vue';
+    import { PACKAGES } from '@/const/landing.js';
 
 export default{
 
@@ -8,7 +10,7 @@ export default{
 
 
 
-    components:{QPackage},
+    components:{QPackage, QTitle},
 
     setup(){
 
@@ -20,10 +22,11 @@ export default{
 }
 </script>
 <template>
-    <div class="flex flex-col justify-center items-center gap-4 py-4">
-        <h3 class="text-black text-3xl font-semibold ">Paquetes</h3>
-        <hr class="w-16 h-1 border-0 bg-black">
-    </div>
+
+<section id="package">
+    <q-title name="Paquetes" color="black" />
+
+
     <div class="flex flex-col text-center">
 
         <span class="text-[#616161]">Precios transparentes para clientes que valoramos</span>
@@ -32,4 +35,9 @@ export default{
     <div class="flex justify-around gap-12 p-10">
         <q-package  v-for="pack of PACKAGES"  :pack="pack"  />   
      </div>
+</section>
+
+    
+
+    
 </template>

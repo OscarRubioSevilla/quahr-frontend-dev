@@ -1,18 +1,19 @@
 <script >
 
-import MainHeader from './components/layout/header/MainHeader.vue';
+
+import QLanding from './pages/QLanding.vue';
 
 export default {
-  components: { MainHeader },
+  components: { QLanding },
   setup() {
 
-    const titulo = 'QUAHR V2';
+
     const botones = ['Probar gratis','Iniciar sesión'];
 
-    return { titulo, botones }
+    return {  botones }
   }
 }
 </script>
 <template>
-  <main-header :titulo="titulo" :botones="botones"></main-header>
+  <q-landing :botones="botones"></q-landing>
 </template>

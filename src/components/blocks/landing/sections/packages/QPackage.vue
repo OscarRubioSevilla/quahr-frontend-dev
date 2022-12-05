@@ -1,7 +1,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 
-import { PERIODS } from '@/const/packages';
+import { PERIODS } from '@/const/landing.js';
 
 
 export default {
