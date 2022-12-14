@@ -1,0 +1,16 @@
+Crear los componentes necesarios para el landing como:
+
+titulos
+paquetes
+preguntas frecuentes
+
+dividir en componentes todas las secciones del landing
+<section></section>
+/blocks/landing/sections
+QBenefits q-benefits
+
+Nota: Componentes con un nombre agregar prefijo Q
+
+Utilizar colores declarados en style.scss o declarar los nuevos colores 
+y especificarlos tambien en tailwind.config.cjs
+
