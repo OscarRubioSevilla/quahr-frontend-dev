@@ -33,3 +33,21 @@ Extra:
 Utilizar colores declarados en style.scss o declarar los nuevos colores 
 y especificarlos tambien en tailwind.config.cjs
 
+
+
+----
+
+Errores con npm
+
+
+Sí al instalar un módulo te retorna un Error similar a este
+
+npm i 
+npm i modulo
+
+npm ERR! Fix the upstream dependency conflict, or retry this command with --force, or --legacy-peer-deps
+
+Se soluciona añadiendo una bandera a la instalación
+
+npm i --legacy-peer-deps
+npm i modulo --legacy-peer-deps
