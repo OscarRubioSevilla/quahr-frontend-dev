@@ -1,15 +1,34 @@
 Crear los componentes necesarios para el landing como:
 
 titulos
-paquetes
-preguntas frecuentes
+Falta beneficios y paquetes
+
 
 dividir en componentes todas las secciones del landing
-<section></section>
-/blocks/landing/sections
-QBenefits q-benefits
+Falta agregar QWhatsQuahr a sections y modificar el nombre
 
-Nota: Componentes con un nombre agregar prefijo Q
+
+
+Completar el array de beneficios con la información de QUAHR
+
+banner
+
+bg_nombreimagen.*ext
+nombreimagen.*ext
+
+
+Cambiar el estilo del nombre del beneficio cuando sea seleccionado
+Acomodar el interior del slide
+Imagen y texto en los lados y una imagen de fondo
+Cambiar el estilo de los puntos para cambiar de imagen
+
+Extra: 
+
+    Buscar solución al problema al momento de selecionar un nuevo punto,
+    que se seleccione el nombre del beneficio
+
+
+
 
 Utilizar colores declarados en style.scss o declarar los nuevos colores 
 y especificarlos tambien en tailwind.config.cjs

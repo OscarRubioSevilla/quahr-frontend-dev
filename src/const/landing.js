@@ -178,3 +178,14 @@ export const PERIODS = [{
 
     },
 ]
+
+// Generar constante de Beneficios
+export const BENEFITS = [
+    {
+        id: 1,
+        name: 'Odontograma',
+        image: 'imagen.png',
+        banner: 'banner.png',
+        description: 'El odontograma más completo, intuitivo y fácil de personalizar'
+    }
+];
