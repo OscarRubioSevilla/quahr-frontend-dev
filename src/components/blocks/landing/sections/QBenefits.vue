@@ -1,38 +1,21 @@
-<script>
+<script setup>
 import QTitle from '@/components/blocks/landing/QTitle.vue';
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-import { ref, watch } from 'vue';
+import { Carousel, Pagination } from 'vue3-carousel';
+import { ref } from 'vue';
+import { BENEFITS } from '@/const/landing';
+import QBenefit from './QBenefit.vue';
 
-export default{
-  components: {
-    QTitle,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  }, 
-  setup() {
+const carousel = ref(null);
+const selectedIndex = ref(0);
 
-    const carousel = ref(null);
-    const selectedIndex = ref(0);
- 
-    const selectImage = index => {
-        carousel.value.slideTo(index);
-        selectedIndex.value = carousel.value.data.currentSlide.value;
-    }
+const selectImage = index => {
+    carousel.value.slideTo(index);
+    selectedIndex.value = carousel.value.data.currentSlide.value;
+}
 
-    watch(carousel, () => {
-        console.log('Modificando')
-    })
-
-
-    return {
-        selectImage,
-        carousel,
-        selectedIndex
-    }
-  }
+const slideEnd = () => {
+    selectedIndex.value = carousel.value.data.currentSlide.value;
 }
 
 </script>
@@ -40,67 +23,63 @@ export default{
 
 <template>
     <section id="benefits">
-        <q-title  name="Beneficios" color="black" />
-   
+        <q-title name="Beneficios" color="black" />
         <div class="flex flex-col">
             <div class="flex gap-5 flex-4 justify-center">
-                <button :class="{'text-red-500': selectedIndex === 0 }" class="text-black text-md font-mediumold" @click="selectImage(0)">Odontograma</button>
-                <button :class="{'text-red-500': selectedIndex === 1 }" class="text-black text-md font-semfont-medium" @click="selectImage(1)">Especialidades</button>
-                <button :class="{'text-red-500': selectedIndex === 2 }" class="text-black text-md font-semfont-medium" @click="selectImage(2)">Historial Clínico</button>
-                <button :class="{'text-red-500': selectedIndex === 3 }" class="text-black text-md font-semfont-medium" @click="selectImage(3)">Diagnósticos</button>
-                <button :class="{'text-red-500': selectedIndex === 4 }" class="text-black text-md font-semfont-medium" @click="selectImage(4)">Notificaciones</button>
+                <button v-for="benefit, index of BENEFITS" 
+                    :class="{ 'font-semibold': selectedIndex === index }" class="text-black text-md font-mediumold"
+                    @click="selectImage(index)">{{ benefit.name }}</button>
             </div>
-    
+
             <!-- Carrusel -->
-            <carousel ref="carousel" :items-to-show="1">
-                <slide :key="0">
-                    <div class="carousel__item" :style="`background-image: ${1}`">
-                        <img class="w-full" src="https://quahr-dental-v1.lugosoftdev.net/recursos/landing/img/beneficios/beneficios_notificaciones.png" alt="">
-                        <h3>El odontograma más completo, intuitivo y fácil de personalizar</h3>
-                    </div>
-                </slide>
-                <slide :key="1">
-                    <div class="carousel__item" :style="`background-image: ${1}`">
-                        <img class="w-full" src="https://quahr-dental-v1.lugosoftdev.net/recursos/landing/img/beneficios/beneficios_notificaciones.png" alt="">
-                        <h3>El odontograma más completo, intuitivo y fácil de personalizar</h3>
-                    </div>
-                </slide>
+            <Carousel :autoplay="5000" @slide-end="slideEnd" :transition="1000" :wrapAround="true" ref="carousel" :items-to-show="1">
+
+                <q-benefit v-for="benefit in BENEFITS" :benefit="benefit" />
+
                 <template #addons>
-                    <pagination />
+                    <pagination   />
                 </template>
-            </carousel>
+            </Carousel>
 
         </div>
     </section>
-   
-    
+
+
 </template>
 
 <style scoped lang="scss">
- 
 .carousel {
     position: relative;
     justify-content: center;
     display: flex;
+    
+
 }
+
 .carousel__pagination {
     position: absolute;
     bottom: 20px;
 }
+.carousel__slide--sliding {
+    transition: all ease  1.5s;
+  }
+::v-deep {
+    
+  .carousel__pagination-button::after {
+    width: 15px ;
+    height: 15px;
+    border-radius: 50%; 
+    background-color: chocolate;
+  }
+  .carousel__pagination-button:hover::after, 
+  .carousel__pagination-button--active::after {
+    background-color: aqua;
+  }
 
-.carousel__item {
-  min-height: 200px;
-  width: 100%;
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  /* background-image: url(https://quahr-dental-v1.lugosoftdev.net/recursos/landing/img/foto5-slider.jpg); */
-  background-size: cover;
-  background-position: center;
 }
+
 
 .carousel__slide {
-  padding: 10px;
+    padding: 10px;
 }
-
 </style>

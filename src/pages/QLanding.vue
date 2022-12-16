@@ -1,6 +1,6 @@
 <script>
 
-import QWhatsQuahr from '@/components/blocks/landing/QWhatsQuar.vue';
+import QWhatsQuahr from '@/components/blocks/landing/sections/whatsQuahr/QWhatsQuahr.vue';
 import QBenefits from '@/components/blocks/landing/sections/QBenefits.vue'
 import QPackages from '@/components/blocks/landing/sections/packages/QPackages.vue'
 import QPresentation from '@/components/blocks/landing/QPresentation.vue'

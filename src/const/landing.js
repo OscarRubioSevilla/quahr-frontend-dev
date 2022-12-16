@@ -180,12 +180,38 @@ export const PERIODS = [{
 ]
 
 // Generar constante de Beneficios
-export const BENEFITS = [
-    {
+export const BENEFITS = [{
         id: 1,
         name: 'Odontograma',
-        image: 'imagen.png',
-        banner: 'banner.png',
-        description: 'El odontograma más completo, intuitivo y fácil de personalizar'
+        image: 'beneficios_odontograma.png',
+        banner: 'bg-odontograma.jpg',
+        description: 'El odontograma más completo, intuitivo y fácil de personalizar.'
+    },
+    {
+        id: 2,
+        name: 'Especialidades',
+        image: 'beneficios_especialidades.png',
+        banner: 'bg-especialidades.jpg',
+        description: 'Quahr se adapta a todas las especialidades Odontológicas, tendrás un Periodontograma interactivo, o historial para Ortodoncia.'
+    }, {
+        id: 3,
+        name: 'Historial Clinico',
+        image: 'beneficios_historialclinico.png',
+        banner: 'bg-historial-clinico.jpg',
+        description: 'Revisa todas las interacciones con tus pacientes en una sencilla línea del tiempo, ve cómo se relaciona tu clínica con una correcta administración.'
+    },
+    {
+        id: 4,
+        name: 'Diagnosticos',
+        image: 'beneficios_diagnosticos.png',
+        banner: 'bg-diganosticos.jpg',
+        description: 'Nuestros catálogos permiten hacer asignaciónes de código internacional CIE, en tu trabajo con aseguradoras o al generar reportes vamos un paso adelante.'
+    },
+    {
+        id: 5,
+        name: 'Notificaciones',
+        image: 'beneficios_notificaciones.png',
+        banner: 'bg-notifiaciones.jpg',
+        description: 'Recibe notificaciones de tus próximas citas, recordatorios de entregas de laboratorios o sobre tus contactos con toda la comunidad odontológica.'
     }
 ];

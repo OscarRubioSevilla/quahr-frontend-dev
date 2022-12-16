@@ -4,11 +4,11 @@
    
     
 
-        <div class="flex">
+        <div class="flex flex-col lg:flex-row mb-8">
             <div class="flex-3">
                 <img src="@/assets/landing/mockup-3dispositivos.png" alt="" />
             </div>
-            <div class="flex-2 flex flex-col justify-center items-start gap-4">
+            <div class="flex-2 flex flex-col justify-center items-center lg:items-start gap-4">
                 <h2 class="text-white text-3xl font-semibold ">Generando bienestar a odontólogos y pacientes de todo el
                     mundo.</h2>
                 <p class="text-white">Acelera tu crecimiento con tu preparación clínica y nuestra experiencia
