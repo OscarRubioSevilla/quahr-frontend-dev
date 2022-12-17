@@ -10,7 +10,7 @@ export default{
         color:{
             type: String,
            required:false,
-           default: 'white' 
+            default: 'white'
         }
 
     }
@@ -23,8 +23,8 @@ export default{
 <template>  
 
     <div  class="flex flex-col justify-center items-center gap-4 py-4">
-        <h3 :class="`text-${color} text-3xl font-semibold `">{{name}}</h3>
-        <hr class="w-16 h-1 border-0 "  :class="`bg-${color}`"   >
+        <h3 :class="`text-${color} text-3xl font-semibold`">{{name}}</h3>
+        <hr   :class="`bg-${color}`" class="w-16 h-1 border-0" >
     </div>
 
 </template>

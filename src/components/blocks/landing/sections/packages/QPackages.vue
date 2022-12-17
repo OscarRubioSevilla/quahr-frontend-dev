@@ -32,7 +32,7 @@ export default{
         <span class="text-[#616161]">Precios transparentes para clientes que valoramos</span>
         <span class="text-[#616161]">¡Elige el plan que se adapte mejor a tu negocio!</span>
     </div>
-    <div class="flex justify-around gap-12 p-10">
+    <div class="flex flex-wrap xl:flex-nowrap justify-around gap-8 p-10">
         <q-package  v-for="pack of PACKAGES"  :pack="pack"  />   
      </div>
 </section>

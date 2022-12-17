@@ -46,7 +46,7 @@ export default{
 
        <q-title name="Características" color="white" />
         
-        <div class="flex  justify-center text-center  gap-10 ">
+        <div class="flex flex-wrap  gap-2  md:flex-nowrap  justify-center text-center  lg:gap-10 ">
             <q-feature v-for="feature of FEATURES_MENU" :feature="feature" :current_feature="currentFeature"
                 @selectedFeature="selectedFeature" />
         </div>

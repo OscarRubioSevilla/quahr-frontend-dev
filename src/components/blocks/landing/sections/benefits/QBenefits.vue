@@ -25,7 +25,7 @@ const slideEnd = () => {
     <section id="benefits">
         <q-title name="Beneficios" color="black" />
         <div class="flex flex-col">
-            <div class="flex gap-5 flex-4 justify-center">
+            <div class="flex flex-wrap  gap-5  justify-center">
                 <button v-for="benefit, index of BENEFITS" 
                     :class="{ 'font-semibold': selectedIndex === index }" class="text-black text-md font-mediumold"
                     @click="selectImage(index)">{{ benefit.name }}</button>
@@ -37,7 +37,7 @@ const slideEnd = () => {
                 <q-benefit v-for="benefit in BENEFITS" :benefit="benefit" />
 
                 <template #addons>
-                    <pagination   />
+                    <pagination    />
                 </template>
             </Carousel>
 
@@ -69,11 +69,11 @@ const slideEnd = () => {
     width: 15px ;
     height: 15px;
     border-radius: 50%; 
-    background-color: chocolate;
+    background-color: aqua ;
   }
   .carousel__pagination-button:hover::after, 
   .carousel__pagination-button--active::after {
-    background-color: aqua;
+    background-color: black;
   }
 
 }

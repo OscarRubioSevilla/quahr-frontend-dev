@@ -28,10 +28,10 @@ export default{
 </script>
 <template>
    
-        <div  :class=" !showQuestion ?'rounded-full' : 'rounded-lg'  "  class="bg-white  w-full ">
-            <div  @click="openAnswer" class="p-5 transition-v font-semibold text-xl text-primary flex justify-between ">
+        <div  :class=" !showQuestion ?'rounded-full' : 'rounded-lg'  "  class="bg-white w-full  ">
+            <div  @click="openAnswer" class="p-5 transition-v font-semibold text-xl text-primary flex justify-between items-center ">
                  {{question.title}} 
-                <img  class="w-8" src="@/assets/landing/questions/btn-question.png"  alt=""> 
+                <img  class="w-8 h-8" src="@/assets/landing/questions/btn-question.png"  alt=""> 
             </div>
             <div v-if="showQuestion" class="border-t-2 border-silver">
                 <p class="m0 p-5 ">

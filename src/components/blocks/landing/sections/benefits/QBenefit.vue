@@ -27,8 +27,8 @@ export default {
     <slide >
         <div class="carousel__item flex flex-col lg:flex-row items-center  "
             :style="`background-image: url('/src/assets/landing/beneficios/${benefit.banner}')`">
-            <img class="flex-1" :src="getImageUrl(`landing/beneficios/${benefit.image}`)" alt="">
-            <h3 class="text-3xl font-semibold flex-1 p-10"> {{ benefit.description }}</h3>
+            <img class="flex-1 p-2" :src="getImageUrl(`landing/beneficios/${benefit.image}`)" alt="">
+            <h3 class="text-2xl font-semibold flex-1 p-10"> {{ benefit.description }}</h3>
         </div>
     </slide>
 
@@ -43,6 +43,7 @@ img {
 .carousel__item {
     cursor: pointer;
     min-height: 400px;
+    
     width: 100%;
     background-color: white;
     color: black;

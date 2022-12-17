@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="flex  text-silver justify-around items-center  p-6 m-2">
+        <div class="flex flex-wrap   md:flex  text-silver justify-around items-center gap-6 p-6 m-2">
             <div class="bg-white">
                 <img class="w-40" src="@/assets/logo/quahr-logo.png" alt="">
             </div>
