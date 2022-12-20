@@ -1,31 +1,90 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, defineProps, watch, defineEmits } from 'vue';
 
-const showModal = ref(false);
-const showConfirmModal = ref(false);
+const emit = defineEmits(['close','confirm', 'cancel' , 'update:model-value']);
+
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    required: true
+  },
+  confirm: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
+  cancel: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
+  cancelText: {
+    type: String,
+    required: false,
+    default: 'Cancelar'
+  },
+  title: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  titleText: {
+    type: String,
+    required: false,
+    default: ''
+  },
+  confirmText: {
+    type: String,
+    required: false,
+    default: 'Aceptar'
+  }
+})
+
+const showModal = ref(props.modelValue);
 
 const confirm = () => {
-    showConfirmModal.value = false
-    showModal.value = false
+    showModal.value = false;
+    emit('confirm');
+}
+const cancel = () => {
+    showModal.value = false;
+    emit('cancel');
+}
+
+watch(() => props.modelValue, (value) => {
+  showModal.value = value;
+});
+
+watch(showModal, (value) => emit('update:model-value', value));
+
+const closeModal = () => {
+  showModal.value = false;
+  emit('close');
 }
 
 </script>
 
 <template>
     <!-- First modal -->
-    <vue-final-modal v-model="showModal" classes="modal-container" content-class="modal-content">
-        <button class="modal__close" @click="showModal = false">
+    <vue-final-modal v-model="showModal"  classes="modal-container" :max-width="Infinity" content-class="modal-content">
+        <slot name="close">
+          <button class="modal__close" @click="closeModal">
             X
-        </button>
-        <span class="modal__title">Hello, vue-final-modal</span>
+          </button>
+        </slot>
+        <span class="modal__title" v-if="props.title">
+          <slot name="title">
+            {{ props.titleText }}
+          </slot>
+        </span>
         <div class="modal__content">
-            <p v-for="i in 5" :key="i">
-            Vue Final Modal is a renderless, stackable, detachable and lightweight modal component.
-            </p>
+          <slot name="body"></slot>
         </div>
         <div class="modal__action">
-            <button @click="showConfirmModal = true">confirm</button>
-            <button @click="showModal = false">cancel</button>
+           <slot name="footer">
+            <button v-if="props.confirm" @click="confirm">{{ props.confirmText }}</button>
+            <button v-if="props.cancel" @click="cancel">{{ props.cancelText }}</button>
+           </slot>
         </div>
     </vue-final-modal>
 </template>
