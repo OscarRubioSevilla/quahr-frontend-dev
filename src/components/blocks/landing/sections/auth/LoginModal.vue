@@ -12,16 +12,19 @@ const props = defineProps({
     }
 })
 
-
 watch(() => props.modelValue, (value) => {
   model.value = value;
 });
+
+const login = () => {
+    console.log('Iniciar sesión');
+}
 
 watch(model, (value) => emit('update:model-value', value));
 
 </script>
 <template>
-    <q-modal v-model="model">
+    <q-modal v-model="model" modalSize="md" titleText="Iniciar sesión">
         <template #body>
 
         </template>

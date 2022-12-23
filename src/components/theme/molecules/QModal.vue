@@ -1,9 +1,29 @@
 <script setup>
 import { ref, defineProps, watch, defineEmits } from 'vue';
 
+import { useScreen } from '@/composables/useScreen';
+
 const emit = defineEmits(['close','confirm', 'cancel' , 'update:model-value']);
 
 const props = defineProps({
+  escToClose: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
+  buttonClose: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  modalSize: {
+    type: String,
+    required: false,
+    default: 'md',
+    validator (value) {
+      return ['sm', 'md', 'lg', 'full'].includes(value)
+    }
+  },
   modelValue: {
     type: Boolean,
     required: true
@@ -40,6 +60,8 @@ const props = defineProps({
   }
 })
 
+const { size, br, isMobile } = useScreen();
+
 const showModal = ref(props.modelValue);
 
 const confirm = () => {
@@ -66,13 +88,21 @@ const closeModal = () => {
 
 <template>
     <!-- First modal -->
-    <vue-final-modal v-model="showModal"  classes="modal-container" :max-width="Infinity" content-class="modal-content">
+    <vue-final-modal v-model="showModal" :esc-to-close="escToClose" classes="modal-container w-" 
+      
+       :content-class="[
+          'modal-content',
+          { 'modal-content-sm w-1/4' : modalSize === 'sm' && !isMobile() },
+          { 'modal-content-md w-2/5' : modalSize === 'md' && !isMobile()  },
+          { 'modal-content-lg w-3/4' : modalSize === 'lg' && !isMobile()  },
+          { 'modal-content-full w-full' : modalSize === 'full' || isMobile() },
+        ]">
         <slot name="close">
-          <button class="modal__close" @click="closeModal">
+          <button v-if="buttonClose" class="modal__close" @click="closeModal">
             X
           </button>
         </slot>
-        <span class="modal__title" v-if="props.title">
+        <span class="modal__title" v-if="props.titleText">
           <slot name="title">
             {{ props.titleText }}
           </slot>
@@ -82,6 +112,8 @@ const closeModal = () => {
         </div>
         <div class="modal__action">
            <slot name="footer">
+            {{  size }}
+            {{ br }}
             <button v-if="props.confirm" @click="confirm">{{ props.confirmText }}</button>
             <button v-if="props.cancel" @click="cancel">{{ props.cancelText }}</button>
            </slot>
