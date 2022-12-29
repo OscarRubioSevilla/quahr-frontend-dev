@@ -1,16 +1,18 @@
-Crear los componentes necesarios para el landing como:
-
-titulos
-Falta beneficios y paquetes
 
 
-dividir en componentes todas las secciones del landing
-Falta agregar QPresentation
+Hacer npm install o borrar node-modules y usar pnpm
 
+Estudiar Pinia y axios
 
-Cambiar el estilo de los puntos para cambiar de imagen
+Implemetar un login sencillo con lo aprendido
 
+Usar el api de quahr para hacer login
 
+Cambiar favicon
+
+Mostrar la modal de login oculta al terminar
+
+Remover código innecesario que se hizo de prueba
 
 ------------------------------
 
