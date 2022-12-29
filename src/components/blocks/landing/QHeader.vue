@@ -11,8 +11,7 @@ const showLoginModal = ref(false);
 
 <template>
     <header class="flex justify-between bg-white px-4 lg:px-32 py-1">
-        {{  showLoginModal }}
-        <login-modal v-model="showLoginModal" @close="showLoginModal = false" />
+        <login-modal v-model="showLoginModal"   @close="showLoginModal = false" />
         <div class="text-primary text-xl">
             <a href="/">
                 <img class="w-11" src="@/assets/logo/quahr-icon.png" alt="" width="100" height="100">
