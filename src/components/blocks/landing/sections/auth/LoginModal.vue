@@ -1,7 +1,8 @@
 <script setup>
 import QModal from '@/components/theme/molecules/QModal.vue';
 
-import { defineEmits, ref, defineProps,watch } from 'vue';
+import { defineEmits, ref, defineProps,watch, computed } from 'vue';
+import { useAuth } from '@/stores/auth/useAuth';
 const emit = defineEmits(["update:model-value"]);
 
 const props = defineProps({
@@ -15,11 +16,24 @@ const usuario = ref('');
 const password = ref('');
 const expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
+const authStore = useAuth();
+
 watch(() => props.modelValue, (value) => {
   model.value = value;
 });
 
-const login = () => {   
+
+const isLoggedIn = computed(() => authStore.isLoggedIn);
+
+const login = async () => {   
+
+    const usuario2 = {
+        user: usuario.value,
+        password: password.value
+    };
+
+    await authStore.login(usuario2);
+
 
   if(!expr.test(usuario.value) ){
     alert('Usuario invalido');
@@ -38,6 +52,7 @@ watch(model, (value) => emit('update:model-value', value));
         <template #body>
             <form class="px-7" @submit.prevent="login">
                 <div class="mb-4">
+                    {{  isLoggedIn }}
                     <input v-model="usuario" class="text-sm w-full outline-none px-2 py-1 rounded-md bg-gray-100
                 border-2 border-transparent focus:bg-white  focus:border-solitude" type="text" 
                     placeholder="Correo electrónico">

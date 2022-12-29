@@ -1,10 +1,14 @@
 <script setup>
 
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 import LoginModal from './sections/auth/LoginModal.vue';
+import { useAuth } from '@/stores/auth/useAuth';
+
+const authStore = useAuth();
 
 const showLoginModal = ref(false);
+const isLoggedIn = computed(() => authStore.isLoggedIn);
 
 </script>
 
@@ -19,7 +23,7 @@ const showLoginModal = ref(false);
         </div>
         <div class="flex gap-4 items-center">
             <button class="text-dolphin text-md border border-dolphin rounded-md px-4">
-                Probar Gratis
+                Probar Gratis {{  isLoggedIn }}
             </button>
             <button @click="showLoginModal = true" class="text-dolphin text-md border-b-2 leading-none">
                 Iniciar sesión
