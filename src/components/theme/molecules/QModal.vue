@@ -5,6 +5,11 @@ import { useScreen } from '@/composables/useScreen';
 const emit = defineEmits(['close', 'confirm', 'cancel', 'update:model-value']);
 
 const props = defineProps({
+  footer: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
   escToClose: {
     type: Boolean,
     required: false,
@@ -60,24 +65,11 @@ const props = defineProps({
 
 })
 
-const { size, br, isMobile } = useScreen();
-
+const { isMobile } = useScreen();
 const showModal = ref(props.modelValue);
 
-
-
-const usuario = ref('');
-const password = ref('');
- const expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
 const confirm = () => { 
-  console.log(expr)
-  if(!expr.test(usuario.value) ){
-    alert('Usuario invalido')
-  }
-  
-  showModal.value = false;
-  emit('confirm', { usuario, password });
+  emit('confirm');
 }
 const cancel = () => {
   showModal.value = false;
@@ -102,7 +94,7 @@ const closeModal = () => {
   <vue-final-modal v-model="showModal" :esc-to-close="escToClose" classes="modal-container" :content-class="[
   'modal-content',
   { 'modal-content-sm w-1/4': modalSize === 'sm' && !isMobile() },
-  { 'modal-content-md w-2/5': modalSize === 'md' && !isMobile() },
+  { 'modal-content-md w-[35%]': modalSize === 'md' && !isMobile() },
   { 'modal-content-lg w-3/4': modalSize === 'lg' && !isMobile() },
   { 'modal-content-full w-full': modalSize === 'full' || isMobile() },
 ]">
@@ -111,27 +103,17 @@ const closeModal = () => {
         X
       </button>
     </slot>
-    <span class="modal__title" v-if="props.titleText">
+    <span class="modal__title p-2 pl-4 text-2xl font-medium border-b-2 border-secondary text-primary" v-if="props.titleText">
       <slot name="title">
         {{ props.titleText }}
       </slot>
     </span>
-    <div class="modal__content flex flex-col gap-5 ">
-      <input v-model="usuario" class="bg-gray-100 rounded-md input-height" type="email" 
-        placeholder="Correo electrónico">
-      <input v-model="password" class="bg-gray-100 rounded-md input-height" type="password"
-       placeholder="Contraseña"
-        name="password" autocomplete="on">
-        <input class="outline-none p-2 rounded-md bg-gray-100
-         focus:bg-white 
-         focus:border-solitude 
-         focus:border-2  " type="text" placeholder="input de prueba">
-
+    <div class="modal__content p-4 flex flex-col gap-5 ">
       <slot name="body"></slot>
     </div>
-    <div class="modal__action">`
+    <div class="modal__action px-4 pb-4" v-if="footer">`
       <slot name="footer">
-        <button class="btn-border  " v-if="props.confirm" @click="confirm()">Iniciar Sesión</button>
+        <button type="" class="btn-border" v-if="props.confirm" @click="confirm">Iniciar Sesión</button>
         <button v-if="props.cancel" @click="cancel"></button>
       </slot>
     </div>
@@ -141,11 +123,6 @@ const closeModal = () => {
 <style scoped>
 input {
   outline: none;
-}
-
-.btn-border {
-  border-bottom: solid 1px black;
-  color: #161442;
 }
 
 .input-height {
@@ -172,30 +149,25 @@ input {
   max-height: 90%;
   margin: 0 1rem;
   border: 1px solid #e2e8f0;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   background: #fff;
 }
 
 .modal__title {
+  padding: .75rem;
   padding-left: 1rem;
-  padding: .5rem;
-  font-size: 1.75rem;
+  font-size: 1.64rem;
   font-weight: 500;
-  border-bottom: 2px solid #52C7E4;
 }
 
 .modal__content {
   overflow-y: auto;
-  padding: 1rem 2rem 0 2rem;
 }
 
 .modal__action {
   display: flex;
   justify-content: end;
-  align-items: top;
   flex-shrink: 0;
-  padding: 1rem 2rem 2rem 2rem;
-
 }
 
 .modal__close {
