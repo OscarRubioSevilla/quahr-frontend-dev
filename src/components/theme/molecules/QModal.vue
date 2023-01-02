@@ -125,17 +125,6 @@ input {
   outline: none;
 }
 
-.input-height {
-  height: 2.2rem;
-  padding: .5rem;
-}
-
-.input-height:focus {
-  background-color: white;
-  border: solid 2px #e2e8f0;
-}
-
-
 ::v-deep .modal-container {
   display: flex;
   justify-content: center;

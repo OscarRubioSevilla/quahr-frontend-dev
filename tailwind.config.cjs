@@ -14,7 +14,11 @@ module.exports = {
                 'dolphin': 'var(--dolphin)',
                 'silver': 'var(--silver)',
                 'denim': 'var(--denim)',
-                'solitude': 'var(--solitude)'
+                'solitude': 'var(--solitude)',
+                'negative': 'var(--negative)',
+                'positive': 'var(--positive)'
+
+
             },
         },
     },

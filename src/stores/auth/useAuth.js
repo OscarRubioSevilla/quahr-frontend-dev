@@ -1,20 +1,22 @@
-
 import { defineStore } from "pinia"
+import { api } from "@/api/axios";
 
-import { ref} from 'vue';
-import axios from 'axios';
+import { ref } from 'vue';
+
 
 export const useAuth = defineStore("AUTH", () => {
 
     const isLoggedIn = ref(false);
 
-    const login = async (usuario) => {
-        isLoggedIn.value = !isLoggedIn.value;
+    const login = async({ user, password }) => {
+        try {
+            const { data } = await api.post('/login', { email: user, password });
+            return isLoggedIn.value = data.success;
 
-        const res = await axios.get('https://sev.mavi.mx:8011/api/product/MERC00284');
-        
-        console.log(res)
+        } catch (error) {
+            return isLoggedIn.value = false;
+        }
+
     }
-
     return { isLoggedIn, login }
 });

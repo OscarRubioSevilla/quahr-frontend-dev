@@ -15,13 +15,7 @@ import QFeatures from '@/components/blocks/landing/sections/features/QFeatures.v
 export default {
     // Propiedades que le puedes pasar a MainHeader main-header
     // Las propiedades se usan en MainHeader
-    props: {
-        botones: {
-            required: true,
-            type: Array,
-
-        }
-    },
+    
     components: {
 
         QWhatsQuahr,
@@ -38,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <q-header :botones="botones" />
+    <q-header/>
 
 
     <div class="bloque-quahr px-4 md:px-15 lg:px-44">
