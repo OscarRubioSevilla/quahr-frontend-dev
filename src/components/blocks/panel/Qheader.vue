@@ -4,8 +4,8 @@
 </script>
 <template>
     <header class="flex h-[98px] justify-between items-center shadow px-7 py-4 ">
-        <div>
-            <img class="w-36" src="@/assets/logo/quahr-logo.png" alt="">
+        <div class="flex gap-4">
+            <button>|||</button><img class="w-36" src="@/assets/logo/quahr-logo.png" alt="">
         </div>
         <div class=" hidden lg:flex rounded-md px-10">
             <input class="outline-none rounded-md img-icon-background
