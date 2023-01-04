@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class=" text-white flex flex-col items-center py-2 px-8 cursor-pointer  hover:bg-primary-500 "> 
+    <div class=" text-white flex flex-col items-center py-2 px-8 cursor-pointer  hover:bg-primary-500"> 
         <img :src="getImageUrl(`landing/img/${menu_panel.image}`)"  class="w-9"  alt="">
         <div>
             <label class="hidden lg:flex text-xs" for="">{{menu_panel.name}}</label> 
