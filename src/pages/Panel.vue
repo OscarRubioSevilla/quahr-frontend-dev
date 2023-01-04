@@ -5,10 +5,12 @@ import QNavs from '@/components/blocks/panel/QNavs.vue'
 </script>
 <template>
     <q-header/>
-    <q-navs/>
+    <div class="flex flex-col lg:flex-row">
+        <q-navs/>
     
     
-    <main>
-       
-    </main>
+        <main>
+           <h2>Main</h2>
+        </main>
+    </div>
 </template>

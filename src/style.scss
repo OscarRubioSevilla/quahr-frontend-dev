@@ -13,6 +13,7 @@ body {
     --primary: #161442; // 182051 
     --primary-500: #121136;
     --secondary: #52C7E4;
+    --white-smoke: #EFEFEF;
     --dolphin: #696974;
     --black: #1f1e1e;
     --white: #FFFFFF;
@@ -105,6 +106,12 @@ body {
     transform: scale(1.05);
 }
 
+
+@responsive {
+    .h-menu {
+        height: calc(100vh - 98px);
+    }
+}
 
 /* https://tailwindcss.com/docs/screens */
 

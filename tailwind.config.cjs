@@ -11,6 +11,7 @@ module.exports = {
                 'primary': 'var(--primary)',
                 'primary-500': 'var(--primary-500)',
                 'secondary': 'var(--secondary)',
+                'white-smoke': 'var(--white-smoke)',
                 'dolphin': 'var(--dolphin)',
                 'silver': 'var(--silver)',
                 'denim': 'var(--denim)',
