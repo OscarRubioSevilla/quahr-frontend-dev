@@ -1,15 +1,25 @@
 <script setup>
+import { useBtnCollapse } from '@/stores/header/btn_Collapse';
+import {computed} from 'vue'
+
+
+const btnCollapse = useBtnCollapse();
+const collapseMenu = computed(() => btnCollapse.collapseMenu);
 
 
 </script>
 <template>
-    <header class="flex h-[98px] justify-between items-center shadow px-7 py-4 ">
-        <div class="flex gap-4">
-            <button>|||</button><img class="w-36" src="@/assets/logo/quahr-logo.png" alt="">
+    <header class="flex h-[98px] justify-between items-center shadow px-7 py-3 ">
+       
+        <div class="flex gap-4 items-center">
+            <button @click="collapseMenu" :class="`w-9 h-9 ml-4 rounded-full p-1 bg-white-smoke hover:bg-slate-200`"> 
+                <img src="@/assets/panel/menu-icon.png" alt="">
+            </button>
+            <img class="w-36" src="@/assets/logo/quahr-logo.png" alt="">
         </div>
-        <div class=" hidden lg:flex rounded-md px-10">
+        <div class=" hidden w-90 lg:flex rounded-md px-10">
             <input class="outline-none rounded-md img-icon-background
-                 bg-no-repeat bg-auto h-6 w-96 p-4 pl-8 shadow-md
+                 bg-no-repeat bg-auto h-6 lg:w-96 p-4 pl-8 shadow-md
                  bg-white-smoke focus:bg-white shadow-slate-200" placeholder="Buscar">
 
         </div>

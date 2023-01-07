@@ -64,7 +64,7 @@ const slideEnd = () => {
     transition: all ease  1.5s;
   }
 ::v-deep {
-    
+        
   .carousel__pagination-button::after {
     width: 15px ;
     height: 15px;
@@ -75,10 +75,7 @@ const slideEnd = () => {
   .carousel__pagination-button--active::after {
     background-color: black;
   }
-
 }
-
-
 .carousel__slide {
     padding: 10px;
 }

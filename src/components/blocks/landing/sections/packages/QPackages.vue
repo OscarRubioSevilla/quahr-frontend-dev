@@ -6,17 +6,10 @@ import QTitle from '../../QTitle.vue';
 
 export default{
 
-
-
-
-
     components:{QPackage, QTitle},
 
     setup(){
-
-
-
-        return{PACKAGES}
+      return{PACKAGES}
     }
 
 }
@@ -25,8 +18,6 @@ export default{
 
 <section id="package">
     <q-title name="Paquetes" color="black" />
-
-
     <div class="flex flex-col text-center">
 
         <span class="text-[#616161]">Precios transparentes para clientes que valoramos</span>
@@ -36,8 +27,6 @@ export default{
         <q-package  v-for="pack of PACKAGES"  :pack="pack"  />   
      </div>
 </section>
-
-    
 
     
 </template>

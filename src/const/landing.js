@@ -215,8 +215,3 @@ export const BENEFITS = [{
         description: 'Recibe notificaciones de tus próximas citas, recordatorios de entregas de laboratorios o sobre tus contactos con toda la comunidad odontológica.'
     }
 ];
-
-const PANEl_MENU = [{
-    name: 'Agenda',
-    image: ''
-}];
