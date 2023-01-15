@@ -1,34 +1,41 @@
 export const PANEl_MENU = [{
         image: 'Agenda.png',
         name: 'Agenda',
-    },
-    {
-        image: 'Caja.png',
-        name: 'Caja'
+        routeName: ''
     },
 
     {
         image: 'Pacientes.png',
-        name: 'Pacientes'
+        name: 'Pacientes',
+        routeName: 'patients'
     },
 
     {
+        image: 'Caja.png',
+        name: 'Caja',
+        routeName: 'panel'
+    },
+    {
         image: 'Inventario.png',
-        name: 'Inventario'
+        name: 'Inventario',
+        routeName: ''
     },
     {
         image: 'crm.png',
-        name: 'CRM'
+        name: 'CRM',
+        routeName: ''
     },
 
     {
         image: 'Laboratorio.png',
-        name: 'Laboratorio'
+        name: 'Laboratorio',
+        routeName: ''
     },
 
     {
         image: 'Comunidad.png',
-        name: 'Comunidad'
+        name: 'Comunidad',
+        routeName: ''
     },
 
 ];

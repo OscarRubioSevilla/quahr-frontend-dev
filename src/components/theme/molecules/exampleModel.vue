@@ -1,9 +1,9 @@
 <script setup>
 import QModal from '@/components/theme/molecules/QModal.vue';
 
-import { defineEmits, ref, defineProps } from 'vue';
+import { defineEmits, ref, defineProps,watch } from 'vue';
 const emit = defineEmits(["update:model-value"]);
-const model = ref(true);
+const model = ref(false);
 
 const props = defineProps({
     modelValue:{

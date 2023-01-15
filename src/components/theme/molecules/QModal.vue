@@ -100,7 +100,7 @@ const closeModal = () => {
 ]">
     <slot name="close">
       <button v-if="buttonClose" class="modal__close" @click="closeModal">
-        X
+        X 
       </button>
     </slot>
     <span class="modal__title p-2 pl-4 text-2xl font-medium border-b-2 border-secondary text-primary" v-if="props.titleText">
@@ -111,7 +111,7 @@ const closeModal = () => {
     <div class="modal__content p-4 flex flex-col gap-5 ">
       <slot name="body"></slot>
     </div>
-    <div class="modal__action px-4 pb-4" v-if="footer">`
+    <div class="modal__action px-4   pb-4" v-if="footer">`
       <slot name="footer">
         <button type="" class="btn-border" v-if="props.confirm" @click="confirm">Iniciar Sesión</button>
         <button v-if="props.cancel" @click="cancel"></button>
